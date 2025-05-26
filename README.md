@@ -6,7 +6,8 @@ A Cairo smart contract for managing reward points on Starknet. This contract all
 The contract has been successfully deployed on Starknet Sepolia testnet:
 
 ## My new account created:
-comand used to create my new account: sncast account create --name my_sepolia_account --network sepolia --add-profile
+### comand used to create my new account: sncast account
+ create --name my_sepolia_account --network sepolia --add-profile
 new account created: 0x07a3ea104393311489472d22f1f9967e1d93961e3a86fd539155adb110f77f06
 
 ## Command to deploy
@@ -25,16 +26,19 @@ The Rewards Contract is a Cairo smart contract built for Starknet that implement
 sncast --profile sepolia call \
   --contract-address 0x07a3ea104393311489472d22f1f9967e1d93961e3a86fd539155adb110f77f06 \
   --function "getPoints" \
-  --calldata 0x1234567890abcdef1234567890abcdef12345678
+  --calldata 0x........... \
+  --network sepolia
 
   # Redeem 500 points
 sncast --profile sepolia call \
-  --contract-address 0x0012e34871bf8a37d72ad81907cd0e04e886656a98b14b9c4eed00bdcbf5a00b \
+  --contract-address 0x07a3ea104393311489472d22f1f9967e1d93961e3a86fd539155adb110f77f06 \
   --function "redeemPoints" \
-  --calldata 500
+  --calldata 500 \
+  --network sepolia
 
   # Transfer 250 points to another address
 sncast --profile sepolia call \
-  --contract-address 0x0012e34871bf8a37d72ad81907cd0e04e886656a98b14b9c4eed00bdcbf5a00b \
+  --contract-address 0x07a3ea104393311489472d22f1f9967e1d93961e3a86fd539155adb110f77f06 \
   --function "transferPoints" \
-  --calldata 0x0987654321fedcba0987654321fedcba09876543 250
+  --calldata 0x0987654321fedcba0987654321fedcba09876543 250 \
+  --network sepolia
